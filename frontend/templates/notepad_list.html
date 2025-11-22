@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<center><h1>NotePad</h1></center>
+<a type="submit" class="btn btn-success btn-sm" style="margin-bottom: 10px;" href="/pad/add/">Write Notes</a>
+{% for notepad in notepad %}
+<ul>
+    <li>
+        <a href="{% url 'notepad_detail' notepad.id %}">{{notepad.title}}</a>
+    </li>
+</ul>
+
+{% endfor %}
+
+{% endblock %}
